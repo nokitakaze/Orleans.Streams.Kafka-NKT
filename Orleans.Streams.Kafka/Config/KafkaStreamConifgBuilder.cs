@@ -34,6 +34,12 @@ namespace Orleans.Streams.Kafka.Config
 			return this;
 		}
 
+		/// <summary>
+		/// Configures the Kafka stream client builder to use Avro serialization with a specified schema registry URL.
+		/// </summary>
+		/// <param name="schemaRegistryUrl">The URL of the schema registry used for Avro serialization.</param>
+		/// <returns>Returns the updated <see cref="KafkaStreamClientBuilder"/> for further configuration.</returns>
+		/// <url>https://avro.apache.org/</url>
 		public KafkaStreamSiloBuilder AddAvro(string schemaRegistryUrl)
 		{
 			_hostBuilder.AddAvro(_providerName, schemaRegistryUrl);
@@ -75,6 +81,10 @@ namespace Orleans.Streams.Kafka.Config
 			return this;
 		}
 
+		/// <summary>
+		/// Add this configuration to IClientBuilder
+		/// </summary>
+		/// <returns></returns>
 		public ISiloBuilder Build()
 		{
 			_hostBuilder.AddKafkaStreamProvider(
@@ -114,6 +124,12 @@ namespace Orleans.Streams.Kafka.Config
 			return this;
 		}
 
+		/// <summary>
+		/// Configures the Kafka stream client builder to use Avro serialization with a specified schema registry URL.
+		/// </summary>
+		/// <param name="schemaRegistryUrl">The URL of the schema registry used for Avro serialization.</param>
+		/// <returns>Returns the updated <see cref="KafkaStreamClientBuilder"/> for further configuration.</returns>
+		/// <url>https://avro.apache.org/</url>
 		public KafkaStreamSiloHostBuilder AddAvro(string schemaRegistryUrl)
 		{
 			_hostBuilder.AddAvro(_providerName, schemaRegistryUrl);
@@ -155,6 +171,10 @@ namespace Orleans.Streams.Kafka.Config
 			return this;
 		}
 
+		/// <summary>
+		/// Add this configuration to IClientBuilder
+		/// </summary>
+		/// <returns></returns>
 		public ISiloBuilder Build()
 		{
 			_hostBuilder.AddKafkaStreamProvider(
@@ -194,6 +214,12 @@ namespace Orleans.Streams.Kafka.Config
 			return this;
 		}
 
+		/// <summary>
+		/// Configures the Kafka stream client builder to use Avro serialization with a specified schema registry URL.
+		/// </summary>
+		/// <param name="schemaRegistryUrl">The URL of the schema registry used for Avro serialization.</param>
+		/// <returns>Returns the updated <see cref="KafkaStreamClientBuilder"/> for further configuration.</returns>
+		/// <url>https://avro.apache.org/</url>
 		public KafkaStreamClientBuilder AddAvro(string schemaRegistryUrl)
 		{
 			_hostBuilder.AddAvro(_providerName, schemaRegistryUrl);
@@ -206,6 +232,10 @@ namespace Orleans.Streams.Kafka.Config
 			return this;
 		}
 
+		/// <summary>
+		/// Add this configuration to IClientBuilder
+		/// </summary>
+		/// <returns></returns>
 		public IClientBuilder Build()
 		{
 			_hostBuilder.AddKafkaStreamProvider(

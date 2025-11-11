@@ -20,10 +20,11 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{9699A72C-BC03-411A-A748-8865FCA6EF87}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
-		CHANGELOG.md = CHANGELOG.md
 		Directory.Build.props = Directory.Build.props
 		package.json = package.json
 		README.md = README.md
+		CHANGELOG.md = CHANGELOG.md
+		Testing.md = Testing.md
 		.github\workflows\build-publish.yml = .github\workflows\build-publish.yml
 	EndProjectSection
 EndProject

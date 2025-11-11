@@ -78,7 +78,7 @@ namespace Orleans.Streams.Kafka.Core
 			catch (Exception ex)
 			{
 				_logger.LogError(
-					ex, "Failed to publish message: streamNamespace: {namespace}, streamGuid: {guid}",
+					ex, "Failed to publish message: streamNamespace: {Namespace}, streamGuid: {Guid}",
 					streamId.GetNamespace(),
 					streamId.GetKeyAsString()
 				);

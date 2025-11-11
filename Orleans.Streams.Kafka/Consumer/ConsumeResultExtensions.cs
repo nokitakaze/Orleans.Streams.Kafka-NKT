@@ -4,7 +4,6 @@ using Orleans.Runtime;
 using Orleans.Streams.Kafka.Core;
 using Orleans.Streams.Utils;
 using System.Collections.Generic;
-using System.Runtime.Serialization;
 using System.Text;
 using SerializationContext = Orleans.Streams.Kafka.Serialization.SerializationContext;
 

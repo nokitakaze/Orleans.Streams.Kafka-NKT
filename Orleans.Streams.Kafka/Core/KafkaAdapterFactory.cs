@@ -146,7 +146,7 @@ namespace Orleans.Streams.Kafka.Core
 			}
 			catch (Exception ex)
 			{
-				_logger.LogError(ex, "Failed to retrieve Kafka meta data. {@config}", _config);
+				_logger.LogError(ex, "Failed to retrieve Kafka meta data. {@Config}", _config);
 				throw;
 			}
 

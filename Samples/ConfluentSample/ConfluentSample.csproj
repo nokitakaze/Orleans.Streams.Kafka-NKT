@@ -4,7 +4,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Confluent.Apache.Avro" Version="$(ConfluentAvroVersion)" />
-    <PackageReference Include="Confluent.Kafka" Version="$(ConfluentKafkaVersion)" />
+    <PackageReference Include="Confluent.Kafka" Version="2.12.0" />
     <PackageReference Include="Microsoft.Orleans.Core.Abstractions" Version="$(OrleansVersion)" />
     <PackageReference Include="Confluent.SchemaRegistry.Serdes" Version="1.3.0" />
     <!-- <ProjectReference Include="..\..\..\confluent-kafka-dotnet-jonny\src\Confluent.SchemaRegistry.Serdes\Confluent.SchemaRegistry.Serdes.csproj" /> -->

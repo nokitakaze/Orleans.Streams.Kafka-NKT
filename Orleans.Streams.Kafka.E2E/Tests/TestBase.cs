@@ -10,7 +10,7 @@ using Xunit;
 
 namespace Orleans.Streams.Kafka.E2E.Tests
 {
-	public class TestBase : IAsyncLifetime
+	public abstract class TestBase : IAsyncLifetime
 	{
 		private short _noOfSilos;
 

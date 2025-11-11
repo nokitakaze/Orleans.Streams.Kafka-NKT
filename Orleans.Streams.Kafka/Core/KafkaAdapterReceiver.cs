@@ -52,9 +52,9 @@ namespace Orleans.Streams.Kafka.Core
 		public Task Initialize(TimeSpan timeout)
 		{
 			_consumer = new ConsumerBuilder<byte[], byte[]>(_options.ToConsumerProperties())
-				.SetErrorHandler((sender, errorEvent) =>
+				.SetErrorHandler((_, errorEvent) =>
 					_logger.LogError(
-						"Consume error reason: {reason}, code: {code}, is broker error: {errorType}",
+						"Consume error reason: {Reason}, code: {Code}, is broker error: {ErrorType}",
 						errorEvent.Reason,
 						errorEvent.Code,
 						errorEvent.IsBrokerError
@@ -73,6 +73,8 @@ namespace Orleans.Streams.Kafka.Core
 				case ConsumeMode.StreamStart:
 					offsetMode = Offset.Beginning;
 					break;
+				default:
+					throw new ArgumentOutOfRangeException(nameof(_options.ConsumeMode), _options.ConsumeMode, null);
 			}
 
 			_consumer.Assign(new TopicPartitionOffset(_queueProperties.Namespace, (int)_queueProperties.PartitionId, offsetMode));
@@ -119,7 +121,7 @@ namespace Orleans.Streams.Kafka.Core
 			}
 			catch (Exception ex)
 			{
-				_logger.LogError(ex, "Failed to commit message offset: {@offset}", batchWithHighestOffset?.TopicPartitionOffSet);
+				_logger.LogError(ex, "Failed to commit message offset: {@Offset}", batchWithHighestOffset?.TopicPartitionOffSet);
 				throw;
 			}
 		}
@@ -180,7 +182,7 @@ namespace Orleans.Streams.Kafka.Core
 			}
 			catch (Exception ex)
 			{
-				_logger.LogError(ex, "Failed to poll for messages queueId: {@queueProperties}", _queueProperties);
+				_logger.LogError(ex, "Failed to poll for messages queueId: {@QueueProperties}", _queueProperties);
 				throw;
 			}
 			finally
